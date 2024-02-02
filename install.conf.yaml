@@ -1,3 +1,18 @@
-- clean: []
-- link: {}
-- shell: []
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ["~/.oh-my-zsh/custom/", "~/.oh-my-zsh/custom/plugins/"]
+
+- link:
+    ~/.oh-my-zsh/custom/:
+      force: true
+      glob: true
+      path: oh-my-zsh/custom/*
+    ~/.p10k.zsh:
+    ~/.zshrc:
+      force: true
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
