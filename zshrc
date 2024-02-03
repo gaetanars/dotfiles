@@ -13,10 +13,15 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # zsh-completions
 fpath=(~/.oh-my-zsh/custom/plugins/zsh-completions/src $fpath)
 
-plugins=(git aws kubectl common-aliases you-should-use zsh-autosuggestions)
+plugins=(git aws kubectl zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
+
+if [[ -d /dc/shellhistory/ ]]; then
+  export HISTFILE=/dc/shellhistory/.zsh_history
+  export PROMPT_COMMAND='history -a'
+fi
