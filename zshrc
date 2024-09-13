@@ -22,3 +22,9 @@ if [[ -d /dc/shellhistory/ ]]; then
   export HISTFILE=/dc/shellhistory/.zsh_history
   export PROMPT_COMMAND='history -a'
 fi
+
+if command -v switcher &>/dev/null; then
+  source <(switcher init zsh)
+  source <(alias s=switch)
+  source <(compdef _switcher switch)
+fi
