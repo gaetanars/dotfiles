@@ -26,5 +26,5 @@ fi
 if command -v switcher &>/dev/null; then
   eval "$(switcher init zsh)"
   alias s="switch"
-  source <(switch completion zsh
+  source <(switch completion zsh)
 fi
