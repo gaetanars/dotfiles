@@ -24,7 +24,7 @@ if [[ -d /dc/shellhistory/ ]]; then
 fi
 
 if command -v switcher &>/dev/null; then
-  source <(switcher init zsh)
-  source <(alias s=switch)
-  source <(compdef _switcher switch)
+  eval "$(switcher init zsh)"
+  alias s="switch"
+  source <(switch completion zsh
 fi
